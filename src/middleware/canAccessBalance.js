@@ -1,7 +1,7 @@
 
-const canAccessProfile = (req, res, next) => {
+const canAccessBalance = (req, res, next) => {
     const userProfileId = req.get('profile_id');
-    const requestedProfile = req.params.id;
+    const requestedProfile = req.params.userId;
     if (userProfileId === requestedProfile) {
         next()
     }
@@ -12,4 +12,4 @@ const canAccessProfile = (req, res, next) => {
         });
     }
 }
-module.exports = { canAccessProfile }
+module.exports = { canAccessBalance }
